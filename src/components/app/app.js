@@ -17,7 +17,7 @@ function App() {
     useEffect(() => {
         async function fetchData(){
             try {
-                const responseData = await fetch("https://api.valantis.store:40000", {
+                const responseData = await fetch("http://api.valantis.store:40000", {
                     method: "POST",
                     headers: {'Content-Type': 'application/json','Accept': 'application/json', 'X-Auth': md5(`Valantis_${currentTime}`)},
                     body: JSON.stringify({
@@ -32,7 +32,7 @@ function App() {
 
                 const resultData = await responseData.json();
 
-                const responseItem = await fetch("https://api.valantis.store:40000", {
+                const responseItem = await fetch("http://api.valantis.store:40000", {
                     method: "POST",
                     headers: {'Content-Type': 'application/json', 'Accept': 'application/json', 'X-Auth': md5(`Valantis_${currentTime}`)},
                     body: JSON.stringify({
